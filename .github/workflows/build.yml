@@ -2,8 +2,6 @@ name: Build APK
 
 on:
   push:
-    branches:
-      - feature-login-offline-queue
   workflow_dispatch:
 
 jobs:
