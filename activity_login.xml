@@ -1,0 +1,30 @@
+diff --git a/app/src/main/res/layout/activity_login.xml b/app/src/main/res/layout/activity_login.xml
+new file mode 100644
+--- /dev/null
++++ b/app/src/main/res/layout/activity_login.xml
+@@
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    android:orientation="vertical"
++    android:padding="24dp"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent">
++
++    <EditText
++        android:id="@+id/etUser"
++        android:hint="Username"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"/>
++
++    <EditText
++        android:id="@+id/etPass"
++        android:hint="Password"
++        android:inputType="textPassword"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"/>
++
++    <Button
++        android:id="@+id/btnLogin"
++        android:text="Login"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"/>
++</LinearLayout>

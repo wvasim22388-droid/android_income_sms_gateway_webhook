@@ -38,6 +38,16 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+		
++       PrefManager pref = new PrefManager(this);
+
+if (!pref.isLoggedIn()) {
+    startActivity(new Intent(this, LoginActivity.class));
+    finish();
+    return;
+}
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
