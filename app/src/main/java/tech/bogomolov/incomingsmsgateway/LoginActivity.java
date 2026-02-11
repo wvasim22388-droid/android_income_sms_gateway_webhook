@@ -16,13 +16,21 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        PrefManager pref = new PrefManager(this);
+
+        // ✅ If already logged in → go directly to MainActivity
+        if (pref.isLoggedIn()) {
+            startActivity(new Intent(this, MainActivity.class));
+            finish();
+            return;
+        }
+
         setContentView(R.layout.activity_login);
 
         etUser = findViewById(R.id.etUser);
         etPass = findViewById(R.id.etPass);
         btnLogin = findViewById(R.id.btnLogin);
-
-        PrefManager pref = new PrefManager(this);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,8 +40,9 @@ public class LoginActivity extends AppCompatActivity {
 
                     pref.setLoggedIn();
 
-                    startService(new Intent(LoginActivity.this,
-                            SmsReceiverService.class));
+                    // ✅ Go to MainActivity
+                    startActivity(new Intent(LoginActivity.this,
+                            MainActivity.class));
 
                     finish();
                 }
